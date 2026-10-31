@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Atome & transition</title>
+<meta name="description" content="Le nucléaire est-il indispensable à la transition écologique française ? Support de présentation, EMC Terminale.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="frise" class="off" aria-hidden="true"><div class="track"><div class="line"></div><div class="fill" id="fill"></div><div id="ticks"></div></div></div>
+<div id="bar"></div>
+<div id="hud"><span id="count">01</span><button id="prev" aria-label="Écran précédent">↑</button><button id="next" aria-label="Écran suivant">↓</button></div>
+
+<!-- TITRE -->
+<section class="screen" id="debut">
+  <div class="inner">
+    <div class="kicker">EMC · Culture du débat · Terminale · Hippolyte</div>
+    <h1 class="big">Le nucléaire est-il <em>indispensable</em> à la transition écologique française&nbsp;?</h1>
+  </div>
+  <div class="hint">Molette, glisser ou flèche ↓ pour avancer</div>
+</section>
+
+<!-- INTRO -->
+<section class="screen">
+  <div class="inner">
+    <div class="kicker">La France en 2025</div>
+    <div class="figs">
+      <div class="fig"><b>68,1 %</b><span>de l'électricité vient du nucléaire</span></div>
+      <div class="fig"><b>95,2 %</b><span>de l'électricité est bas carbone</span></div>
+    </div>
+    <div class="but"><span class="kicker">Mais</span><span class="pill w">accident</span><span class="pill w">déchets</span><span class="pill w">coût</span><span class="pill w">délais</span></div>
+  </div>
+  <div class="src">Source : RTE, Bilan électrique 2025</div>
+</section>
+
+<section class="screen">
+  <div class="inner">
+    <div class="kicker">Problématique</div>
+    <p class="mid">Le nucléaire est-il indispensable, ou peut-on réussir la transition surtout avec les <em style="font-style:normal;color:var(--accent)">renouvelables</em>&nbsp;?</p>
+  </div>
+</section>
+
+<!-- I -->
+<section class="screen part">
+  <div class="inner"><div class="roman">I</div><p class="mid">Pourquoi une controverse&nbsp;?</p></div>
+</section>
+
+<section class="screen" data-era="hist" data-tick="0">
+  <div class="inner dated">
+    <div><div class="year">1896<small>Henri Becquerel découvre la radioactivité</small></div></div>
+    <figure class="photo" data-src="img/becquerel.jpg"><div class="frame"><div class="ph"><b>Henri Becquerel</b>portrait · domaine public</div></div><figcaption>Henri Becquerel</figcaption></figure>
+  </div>
+  <div class="src">Source : BnF, Marie Curie et la radioactivité</div>
+</section>
+
+<section class="screen" data-era="hist" data-tick="1">
+  <div class="inner dated">
+    <div><div class="year">1898<small>Marie et Pierre Curie découvrent le radium</small></div><p class="lead" style="margin-top:1em">Premières applications médicales.</p></div>
+    <figure class="photo" data-src="img/curie.jpg"><div class="frame"><div class="ph"><b>Marie et Pierre Curie au laboratoire</b>photographie vers 1904 · domaine public</div></div><figcaption>Marie et Pierre Curie</figcaption></figure>
+  </div>
+  <div class="src">Sources : BnF · Larousse, « Radiothérapie »</div>
+</section>
+
+<section class="screen" data-era="hist" data-tick="2">
+  <div class="inner dated">
+    <div><div class="year">1945<small>Hiroshima, 6 août · Nagasaki, 9 août</small></div><p class="lead" style="margin-top:1em">L'atome devient une arme.</p></div>
+    <figure class="photo" data-src="img/nagasaki.jpg"><div class="frame"><div class="ph"><b>Champignon atomique de Nagasaki</b>photo de l'armée américaine · domaine public</div></div><figcaption>Nagasaki, 9 août 1945</figcaption></figure>
+  </div>
+  <div class="src">Source : Hérodote, « 6-9 août 1945 »</div>
+</section>
+
+<section class="screen" data-era="hist" data-tick="2">
+  <div class="inner">
+    <div class="kicker">Ne pas confondre</div>
+    <div class="versus">
+      <div class="side"><h3>La bombe</h3><p>Un objectif militaire. Détruire.</p></div>
+      <div class="neq">≠</div>
+      <div class="side"><h3>La centrale</h3><p>Une fission contrôlée pour produire de l'électricité.</p></div>
+    </div>
+    <button class="open" data-open="fission">Ouvrir le réacteur →</button>
+  </div>
+</section>
+
+<section class="screen" data-era="hist" data-tick="3">
+  <div class="inner dated">
+    <div><div class="year">1970<small>À partir des années 1970, le nucléaire civil se développe en France</small></div><p class="lead" style="margin-top:1em">Il devient l'une des principales sources d'électricité du pays.</p></div>
+    <figure class="photo" data-src="img/gravelines.jpg"><div class="frame"><div class="ph"><b>Centrale de Gravelines (Nord)</b>photo sous licence libre · crédit à indiquer</div></div><figcaption>Centrale nucléaire de Gravelines</figcaption></figure>
+  </div>
+</section>
+
+<section class="screen" data-era="hist" data-tick="4">
+  <div class="inner dated">
+    <div><div class="year">1986<small>Tchernobyl</small></div><div class="year" style="margin-top:.2em">2011<small>Fukushima</small></div></div>
+    <figure class="photo" data-src="img/fukushima.jpg"><div class="frame"><div class="ph"><b>Centrale de Fukushima Daiichi après l'accident</b>photo sous licence libre · crédit à indiquer</div></div><figcaption>Fukushima Daiichi, 2011</figcaption></figure>
+  </div>
+  <div class="src">Les accidents rappellent que le risque existe.</div>
+</section>
+
+<section class="screen">
+  <div class="inner">
+    <div class="kicker">Un problème politique</div>
+    <p class="mid">L'État doit choisir.</p>
+    <div class="trio">
+      <div><b>L'argent public</b><span>Des centrales très chères à construire</span></div>
+      <div><b>La sécurité</b><span>Accidents et déchets pour des milliers d'années</span></div>
+      <div><b>L'avenir</b><span>Des choix qui engagent des décennies</span></div>
+    </div>
+    <div class="cost" aria-label="Coût de l'EPR de Flamanville">
+      <div class="bar" style="height:28px"><b>3,3 Md€</b><small>devis 2007</small></div>
+      <div class="bar now" style="height:200px"><b>23,7 Md€</b><small>coût final</small></div>
+      <p>L'EPR de Flamanville a coûté 7 fois son devis.</p>
+    </div>
+  </div>
+  <div class="src">Source : Cour des comptes, rapport de janvier 2025</div>
+</section>
+
+<!-- II -->
+<section class="screen part">
+  <div class="inner"><div class="roman">II</div><p class="mid">Les acteurs et leurs positions</p></div>
+</section>
+
+<section class="screen">
+  <div class="inner">
+    <div class="camps">
+      <div class="camp p">
+        <h3>Partisans</h3>
+        <div class="who"><span>EDF</span><span>SFEN</span><span>Responsables politiques</span></div>
+        <ul><li>Peu de CO₂</li><li>Moins de gaz et de pétrole importés</li><li>Des risques maîtrisés par les normes</li><li>Des emplois</li></ul>
+      </div>
+      <div class="camp c">
+        <h3>Opposants</h3>
+        <div class="who"><span>Greenpeace France</span><span>Réseau Sortir du nucléaire</span></div>
+        <ul><li>Risque d'accident</li><li>Déchets pour des milliers d'années</li><li>Coût et délais</li><li>Cet argent pour les renouvelables</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="src">Sources : EDF · Greenpeace France</div>
+</section>
+
+<section class="screen">
+  <div class="inner">
+    <div class="kicker">Pourquoi ils ne s'entendent pas</div>
+    <p class="mid">Mêmes objectifs. Moyens opposés.</p>
+    <svg class="venn" viewBox="0 0 900 330" role="img" aria-label="Deux cercles qui se recoupent : les objectifs communs au centre">
+      <circle cx="320" cy="165" r="150" fill="var(--accent)" fill-opacity=".10" stroke="var(--accent)" stroke-width="2"/>
+      <circle cx="580" cy="165" r="150" fill="var(--warm)" fill-opacity=".10" stroke="var(--warm)" stroke-width="2"/>
+      <text x="210" y="160" text-anchor="middle" font-family="Archivo, sans-serif" font-size="26" font-weight="700" fill="var(--accent)">Nucléaire</text>
+      <text x="210" y="192" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="17" fill="var(--ink)">solution majeure</text>
+      <text x="690" y="160" text-anchor="middle" font-family="Archivo, sans-serif" font-size="26" font-weight="700" fill="var(--warm)">Autres solutions</text>
+      <text x="690" y="192" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="17" fill="var(--ink)">risques trop lourds</text>
+      <text x="450" y="135" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="17" font-weight="600" fill="var(--ink)">moins de CO₂</text>
+      <text x="450" y="170" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="17" font-weight="600" fill="var(--ink)">environnement</text>
+      <text x="450" y="205" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="17" font-weight="600" fill="var(--ink)">électricité pour tous</text>
+    </svg>
+  </div>
+</section>
+
+<section class="screen">
+  <div class="inner">
+    <div class="kicker">Citoyens et pouvoirs publics</div>
+    <p class="mid">Trouver un équilibre entre&nbsp;:</p>
+    <div class="scale">
+      <div><b>Moins de CO₂</b></div>
+      <div><b>Électricité garantie</b></div>
+      <div><b>Protéger les habitants</b></div>
+      <div><b>Limiter les dépenses</b></div>
+    </div>
+    <div class="opinion"><b>49 %</b><div class="gauge" aria-hidden="true"><i></i></div><span>des Français sont pour de nouvelles centrales</span></div>
+  </div>
+  <div class="src">Source : IRSN, Baromètre 2024</div>
+</section>
+
+<!-- III -->
+<section class="screen part">
+  <div class="inner"><div class="roman">III</div><p class="mid">Comment le débat se déroule</p></div>
+</section>
+
+<section class="screen">
+  <div class="inner">
+    <div class="kicker">Plusieurs lieux</div>
+    <div class="flow">
+      <div class="row"><span class="node">Gouvernement</span><span class="arrow">propose →</span><span class="node">Députés et sénateurs</span><span class="arrow">votent</span></div>
+      <div class="row"><span class="node soft">Associations</span><span class="node soft">Entreprises</span><span class="node soft">Experts</span><span class="arrow">→</span><span class="node soft">Médias · études · consultations</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="screen" data-era="deb" data-tick="0">
+  <div class="inner">
+    <div class="kicker">Débat public · Commission nationale du débat public</div>
+    <div class="span">27 oct. 2022 → 27 févr. 2023</div>
+    <p class="lead">Six nouveaux réacteurs EPR2&nbsp;? Les citoyens s'informent et donnent leur avis.</p>
+  </div>
+  <div class="src">Source : CNDP, débat sur les EPR2</div>
+</section>
+
+<!-- IV -->
+<section class="screen part">
+  <div class="inner"><div class="roman">IV</div><p class="mid">L'issue du débat</p></div>
+</section>
+
+<section class="screen" data-era="deb" data-tick="1">
+  <div class="inner">
+    <div class="kicker">La décision</div>
+    <div class="span">22 juin 2023</div>
+    <p class="lead">Loi d'accélération du nucléaire. La France choisit de construire de nouveaux réacteurs.</p>
+  </div>
+  <div class="src">Source : Légifrance, loi du 22 juin 2023</div>
+</section>
+
+<section class="screen" data-era="deb" data-tick="2">
+  <div class="inner">
+    <div class="kicker">Février 2026 · programmation de l'énergie (PPE3)</div>
+    <div class="figs">
+      <div class="fig"><b>6</b><span>réacteurs EPR2 confirmés</span></div>
+      <div class="fig"><b>+ 8</b><span>en option</span></div>
+    </div>
+    <p class="lead" style="margin-top:1.2em">Adoptée par décret, sans vote du Parlement.</p>
+  </div>
+  <div class="src">Sources : Connaissance des Énergies (AFP), févr. 2026 · Maire-info, févr. 2026</div>
+</section>
+
+<section class="screen">
+  <div class="inner">
+    <div class="kicker">Mais le débat continue</div>
+    <div class="figs">
+      <div class="fig"><b style="font-size:clamp(56px,8vw,130px)">72,8&nbsp;Md€</b><span>coût estimé des six EPR2</span></div>
+      <div class="fig" style="align-self:end"><div class="but" style="margin:0"><span class="pill w">coût</span><span class="pill w">déchets</span><span class="pill w">sécurité</span><span class="pill w">place des renouvelables</span></div></div>
+    </div>
+    <p class="lead" style="margin-top:1.4em">Une décision fait avancer. Elle ne convainc pas tout le monde.</p>
+  </div>
+  <div class="src">Source : EDF, chiffrage de décembre 2025 (via Opéra Énergie)</div>
+</section>
+
+<!-- V -->
+<section class="screen part">
+  <div class="inner"><div class="roman">V</div><p class="mid">Mon choix</p></div>
+</section>
+
+<section class="screen stepped" data-steps>
+  <div class="inner">
+    <div class="kicker">Pas l'un ou l'autre</div>
+    <p class="mid">Un équilibre.</p>
+    <div class="pillars">
+      <div class="step"><b>Garder un nucléaire sûr</b><span>Les centrales qui fonctionnent en sécurité</span></div>
+      <div class="step"><b>Développer les renouvelables</b><span>Solaire, éolien, hydraulique</span></div>
+      <div class="step"><b>Moins gaspiller</b><span>Isolation, appareils sobres, transports en commun</span></div>
+      <div class="step"><img class="iterlogo" data-try="img/iterlogo" alt="Logo ITER" hidden><b>Continuer la recherche</b><span>ITER étudie la fusion. Pas d'électricité pour le réseau avant longtemps.</span><button class="open" data-open="fusion">Ouvrir ITER →</button></div>
+    </div>
+  </div>
+  <div class="src">Source : ITER, foire aux questions</div>
+</section>
+
+<section class="screen">
+  <div class="inner dated iterscreen">
+    <figure class="photo schema" data-try="img/iterschema"><div class="frame"><div class="ph"><b>Schéma de la fusion · ITER</b>img/iterschema · © ITER Organization</div></div><figcaption>Schéma · © ITER Organization</figcaption></figure>
+    <div>
+      <div class="kicker">Recherche · ITER, Cadarache</div>
+      <p class="mid">La fusion</p>
+      <ul class="facts">
+        <li>Des noyaux légers qui fusionnent, comme dans le Soleil</li>
+        <li>Un plasma à 150 millions de degrés</li>
+        <li>Pas d'électricité pour le réseau. Phase deutérium-tritium en 2039.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="src">Sources : ITER, foire aux questions · PATSTEC · The Chemical Engineer, 2024</div>
+</section>
+
+<!-- CONCLUSION -->
+<section class="screen part">
+  <div class="inner"><div class="kicker">Conclusion</div><p class="mid">Pourquoi est-il difficile de satisfaire tout le monde&nbsp;?</p></div>
+</section>
+
+<section class="screen stepped concl" data-steps>
+  <div class="inner">
+    <p class="step">Les acteurs n'ont pas les mêmes priorités.</p>
+    <p class="step">Climat et électricité garantie d'un côté. Risques, déchets et coût de l'autre.</p>
+    <p class="step">Chaque choix engage des dizaines d'années.</p>
+    <p class="step final">Le nucléaire est important. Mais pas suffisant seul.</p>
+  </div>
+</section>
+
+<!-- SOURCES -->
+<section class="screen sources" id="sources">
+  <div class="inner">
+    <div class="kicker">Sources</div>
+    <ol>
+      <li><b>RTE</b>, Bilan électrique 2025, synthèse. Chiffres repris par <a href="https://www.connaissancedesenergies.org/la-production-electrique-bas-carbone-de-la-france-atteint-un-maximum-historique-en-2025" target="_blank" rel="noopener">Connaissance des Énergies</a>.</li>
+      <li><b>Commission nationale du débat public</b>, le débat sur les nouveaux réacteurs EPR2.</li>
+      <li><b>Légifrance</b>, loi du 22 juin 2023 relative à l'accélération des procédures liées à la construction de nouvelles installations nucléaires.</li>
+      <li><b>EDF</b>, le mix électrique d'EDF.</li>
+      <li><b>Greenpeace France</b>, consultation nationale sur la relance du nucléaire.</li>
+      <li><b>ANDRA</b>, le stockage des déchets radioactifs.</li>
+      <li><b>ITER</b>, foire aux questions.</li>
+      <li><b>BnF</b>, « Les cahiers de Marie Curie conservés à la BnF sont-ils radioactifs ? ».</li>
+      <li><b>Hérodote</b>, <a href="https://www.herodote.net/6_9_aout_1945-evenement-19450806.php?resume=1" target="_blank" rel="noopener">« 6-9 août 1945 »</a>.</li>
+      <li><b>Larousse</b>, <a href="https://www.larousse.fr/encyclopedie/divers/radioth%c3%a9rapie/85354" target="_blank" rel="noopener">« Radiothérapie »</a>.</li>
+      <li><b>Cour des comptes</b>, coût de Flamanville 3, via <a href="https://www.europe1.fr/economie/construction-de-reacteurs-epr-la-cour-des-comptes-alerte-sur-le-risque-de-nouvelles-derives-240381" target="_blank" rel="noopener">Europe 1</a>, janv. 2025.</li>
+      <li><b>IRSN</b>, <a href="https://irsn.fr/sites/default/files/2024-09/CP_IRSN_Barometre_Edition_2024.pdf" target="_blank" rel="noopener">Baromètre 2024</a>.</li>
+      <li><b>Connaissance des Énergies (AFP)</b>, <a href="https://www.connaissancedesenergies.org/afp/ppe-3-le-decret-sur-la-feuille-de-route-energetique-publie-au-jo-260213" target="_blank" rel="noopener">PPE3 publiée au JO</a>, févr. 2026.</li>
+      <li><b>Maire-info</b>, <a href="https://www.maire-info.com/energie/la-programmation-pluriannuelle-de-lenergie-enfin-publiee-le-soutien-aux-energies-renouvelables-maintenu-art26-30480" target="_blank" rel="noopener">la PPE enfin publiée</a>, févr. 2026.</li>
+      <li><b>Public Sénat</b>, <a href="https://www.publicsenat.fr/actualites/politique/programmation-pluriannuelle-de-lenergie-la-feuille-de-route-de-sebastien-lecornu-coute-t-elle-300-milliards-comme-laffirme-le-rn" target="_blank" rel="noopener">6 EPR2 et 8 en option</a>, 2026.</li>
+      <li><b>Opéra Énergie</b>, <a href="https://opera-energie.com/media/epr2-6-mois-decisifs-pour-le-nucleaire-francais/" target="_blank" rel="noopener">EPR2 : 6 mois décisifs</a>, 2026.</li>
+      <li><b>Connaissance des Énergies</b>, <a href="https://www.connaissancedesenergies.org/fiche-pedagogique/principes-de-fonctionnement-dun-reacteur-nucleaire" target="_blank" rel="noopener">fonctionnement d'un réacteur</a>.</li>
+      <li><b>PATSTEC</b>, <a href="https://www.patstec.fr/pdfgen.php?id=24915" target="_blank" rel="noopener">fiche ITER</a> · <b>The Chemical Engineer</b>, <a href="https://www.thechemicalengineer.com/news/iter-postponed-by-a-decade-in-5bn-overhaul/" target="_blank" rel="noopener">calendrier ITER</a>, 2024.</li>
+    </ol>
+  </div>
+</section>
+
+<!-- OVERLAY REACTEUR -->
+<div id="ov" hidden role="dialog" aria-modal="true" aria-label="Explorer le réacteur">
+  <div class="top">
+    <div class="tabs" role="tablist">
+      <button role="tab" id="t-fis" aria-selected="true">Fission · centrale</button>
+      <button role="tab" id="t-fus" aria-selected="false">Fusion · ITER</button>
+    </div>
+    <button class="close" id="ovclose">Fermer · Échap</button>
+  </div>
+  <div class="lab">
+    <div>
+      <div class="stage">
+        <svg id="svg-fission" viewBox="0 0 520 380" role="img" aria-label="Schéma simplifié d'un réacteur à eau pressurisée">
+          <defs><radialGradient id="core-glow" cx="50%" cy="60%" r="60%"><stop offset="0%" stop-color="var(--glow)" stop-opacity=".75"/><stop offset="100%" stop-color="var(--glow)" stop-opacity="0"/></radialGradient></defs>
+          <g class="hot" data-part="primaire" tabindex="0" role="button" aria-label="Circuit primaire">
+            <path class="hl" d="M215 150 H330 V110 H380" fill="none" stroke="var(--muted)" stroke-width="5"/>
+            <path class="hl" d="M380 290 H330 V260 H215" fill="none" stroke="var(--muted)" stroke-width="5"/>
+            <text x="250" y="140" font-family="JetBrains Mono, monospace" font-size="11" fill="var(--muted)">eau à 155 atm</text>
+          </g>
+          <g class="hot" data-part="cuve" tabindex="0" role="button" aria-label="Cuve"><rect class="hl" x="60" y="70" width="160" height="270" rx="70" fill="var(--bg)" stroke="var(--ink)" stroke-width="3"/></g>
+          <g class="hot" data-part="eau" tabindex="0" role="button" aria-label="Eau">
+            <rect class="hl" x="74" y="120" width="132" height="200" rx="40" fill="var(--glow)" fill-opacity=".10" stroke="transparent" stroke-width="2"/>
+            <rect id="core-light" class="breathe" x="74" y="120" width="132" height="200" rx="40" fill="url(#core-glow)"/>
+          </g>
+          <g class="hot" data-part="combustible" tabindex="0" role="button" aria-label="Combustible">
+            <rect class="hl" x="96" y="190" width="88" height="110" fill="transparent" stroke="transparent" stroke-width="2"/>
+            <g fill="var(--ink)"><rect x="100" y="195" width="6" height="100"/><rect x="116" y="195" width="6" height="100"/><rect x="132" y="195" width="6" height="100"/><rect x="148" y="195" width="6" height="100"/><rect x="164" y="195" width="6" height="100"/><rect x="176" y="195" width="6" height="100"/></g>
+          </g>
+          <g class="hot" data-part="barres" tabindex="0" role="button" aria-label="Barres de contrôle">
+            <rect class="hl" x="102" y="30" width="76" height="40" fill="transparent" stroke="transparent" stroke-width="2"/>
+            <g id="rods" fill="var(--warm)"><rect x="108" y="40" width="4" height="150"/><rect x="124" y="40" width="4" height="150"/><rect x="140" y="40" width="4" height="150"/><rect x="156" y="40" width="4" height="150"/><rect x="170" y="40" width="4" height="150"/></g>
+            <text x="190" y="44" font-family="JetBrains Mono, monospace" font-size="11" fill="var(--muted)">barres</text>
+          </g>
+          <g class="hot" data-part="gv" tabindex="0" role="button" aria-label="Générateur de vapeur">
+            <rect class="hl" x="380" y="80" width="70" height="240" rx="30" fill="var(--bg)" stroke="var(--ink)" stroke-width="3"/>
+            <path d="M392 280 C420 260, 400 240, 430 220 S410 180, 438 150" fill="none" stroke="var(--muted)" stroke-width="2"/>
+            <text x="384" y="345" font-family="JetBrains Mono, monospace" font-size="11" fill="var(--muted)">vers turbine →</text>
+          </g>
+          <text x="74" y="368" font-family="JetBrains Mono, monospace" font-size="11" fill="var(--muted)">schéma simplifié · réacteur à eau pressurisée</text>
+        </svg>
+        <svg id="svg-fusion" viewBox="0 0 520 380" role="img" aria-label="Coupe simplifiée d'un tokamak" hidden>
+          <defs><radialGradient id="plasma" cx="50%" cy="50%" r="55%"><stop offset="0%" stop-color="#f3d7ff"/><stop offset="45%" stop-color="var(--glow)" stop-opacity=".9"/><stop offset="100%" stop-color="var(--glow)" stop-opacity="0"/></radialGradient></defs>
+          <g class="hot" data-part="solenoide" tabindex="0" role="button" aria-label="Solénoïde central">
+            <rect class="hl" x="245" y="70" width="30" height="240" fill="var(--surface)" stroke="var(--ink)" stroke-width="2.5"/>
+            <g stroke="var(--muted)" stroke-width="1"><line x1="245" y1="100" x2="275" y2="100"/><line x1="245" y1="140" x2="275" y2="140"/><line x1="245" y1="180" x2="275" y2="180"/><line x1="245" y1="220" x2="275" y2="220"/><line x1="245" y1="260" x2="275" y2="260"/></g>
+          </g>
+          <g class="hot" data-part="chambre" tabindex="0" role="button" aria-label="Chambre à vide">
+            <path class="hl" d="M300 90 C420 90, 450 150, 450 190 C450 230, 420 290, 300 290 Z" fill="var(--bg)" stroke="var(--ink)" stroke-width="3"/>
+            <path class="hl" d="M220 90 C100 90, 70 150, 70 190 C70 230, 100 290, 220 290 Z" fill="var(--bg)" stroke="var(--ink)" stroke-width="3"/>
+          </g>
+          <g class="hot" data-part="plasma" tabindex="0" role="button" aria-label="Plasma">
+            <ellipse class="hl breathe" cx="375" cy="190" rx="52" ry="72" fill="url(#plasma)" stroke="transparent" stroke-width="2"/>
+            <ellipse class="breathe" cx="145" cy="190" rx="52" ry="72" fill="url(#plasma)"/>
+          </g>
+          <g class="hot" data-part="aimants" tabindex="0" role="button" aria-label="Aimants">
+            <g class="hl" fill="var(--accent)" stroke="transparent" stroke-width="2">
+              <rect x="455" y="120" width="16" height="44" rx="3"/><rect x="455" y="216" width="16" height="44" rx="3"/><rect x="49" y="120" width="16" height="44" rx="3"/><rect x="49" y="216" width="16" height="44" rx="3"/>
+              <rect x="330" y="62" width="60" height="14" rx="3"/><rect x="330" y="304" width="60" height="14" rx="3"/><rect x="130" y="62" width="60" height="14" rx="3"/><rect x="130" y="304" width="60" height="14" rx="3"/>
+            </g>
+          </g>
+          <text x="20" y="368" font-family="JetBrains Mono, monospace" font-size="11" fill="var(--muted)">coupe simplifiée · tokamak</text>
+        </svg>
+      </div>
+      <p class="ovhint">Clique sur une pièce</p>
+    </div>
+    <div>
+      <div class="panel" id="panel" aria-live="polite"></div>
+      <div class="ctrl" id="ctrl">
+        <label for="rodslider">Enfoncer les barres de contrôle</label>
+        <input type="range" id="rodslider" min="0" max="100" value="50">
+        <div class="state" id="rodstate"></div>
+      </div>
+      <div class="iterbox" id="iterbox" hidden>
+        <img class="iterlogo" data-try="img/iterlogo" alt="Logo ITER" hidden>
+        <figure class="photo" data-try="img/iterconstru"><div class="frame"><div class="ph"><b>Chantier d'ITER à Cadarache</b>img/iterconstru · © ITER Organization</div></div><figcaption>Le chantier d'ITER à Cadarache · © ITER Organization</figcaption></figure>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

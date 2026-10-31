@@ -1,0 +1,15 @@
+Place ici les 8 images, avec exactement ces noms :
+
+becquerel.jpg   Henri Becquerel (domaine public)
+curie.jpg       Marie et Pierre Curie au laboratoire (domaine public)
+nagasaki.jpg    Champignon atomique de Nagasaki, 9 août 1945 (domaine public)
+gravelines.jpg  Centrale nucléaire de Gravelines (indiquer auteur + licence)
+fukushima.jpg   Fukushima Daiichi après l'accident (indiquer auteur + licence)
+iterlogo        Logo d'ITER (png ou svg, fond transparent de préférence)
+iterconstru     Photo du chantier d'ITER (© ITER Organization)
+iterschema      Schéma de la fusion / du tokamak ITER (affiché en entier, sans recadrage)
+
+Pour iterlogo, iterconstru et iterschema, l'extension peut être .png, .svg, .jpg, .jpeg ou .webp.
+
+Tant qu'une photo manque, le site affiche un cadre hachuré à sa place.
+Format conseillé : paysage (4:3), environ 1200 px de large.
