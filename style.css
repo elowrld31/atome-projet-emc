@@ -81,7 +81,8 @@ figure.photo figcaption{font-family:var(--f-mono);font-size:11.5px;color:var(--m
 #frise .tick.past i{border-color:var(--accent);background:var(--accent)}
 #frise .tick.now{color:var(--ink);font-weight:500}
 #frise .tick.now i{transform:scale(1.45);border-color:var(--accent);background:var(--accent);box-shadow:0 0 0 5px color-mix(in srgb,var(--accent) 20%,transparent)}
-@media (max-width:600px){#frise .tick span{display:none}#frise .tick.now span{display:inline}}
+@media (max-width:600px){#frise .tick{font-size:0}#frise .tick.now{font-size:11px}#frise .tick span{display:none}#frise .tick.first{transform:none}#frise .tick.last{transform:translateX(-100%)}
+.src{right:150px}}
 
 /* arme / centrale */
 .versus{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:3vw;align-items:center;margin-top:1em}
@@ -166,7 +167,7 @@ figure.photo figcaption{font-family:var(--f-mono);font-size:11.5px;color:var(--m
 #hud button{background:var(--surface);border:1px solid var(--faint);width:34px;height:34px;border-radius:50%;cursor:pointer;display:grid;place-items:center}
 #hud button:hover{border-color:var(--ink)}
 #bar{position:fixed;z-index:21;left:0;bottom:0;height:3px;background:var(--accent);width:0;transition:width .4s ease}
-.hint{position:absolute;bottom:28px;right:max(24px,6vw);font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+.hint{position:absolute;bottom:28px;left:max(24px,6vw);font-family:var(--f-mono);font-size:12px;color:var(--muted)}
 
 /* overlay réacteur */
 #ov{position:fixed;inset:0;z-index:50;background:var(--bg);overflow:auto;
@@ -211,3 +212,9 @@ figure.schema img{object-fit:contain;filter:none;padding:12px}
 .facts{list-style:none;margin:0;padding:0;display:grid;gap:.9em}
 .facts li{border-top:1.5px solid var(--faint);padding-top:.6em;font-size:1.1em;max-width:30ch}
 @media (max-width:760px){figure.schema .frame{height:auto;aspect-ratio:4/3}}
+
+/* Portraits verticaux : cadre 3:4, centré, visage jamais coupé */
+figure.photo.portrait{justify-self:center;display:flex;flex-direction:column;align-items:center}
+figure.photo.portrait .frame{aspect-ratio:3/4;height:min(64vh,580px);width:auto;max-width:100%}
+figure.photo.portrait img{object-position:center 25%}
+@media (max-width:760px){figure.photo.portrait .frame{height:min(52vh,440px)}}

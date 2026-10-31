@@ -1,7 +1,8 @@
 Place ici les 8 images, avec exactement ces noms :
 
 becquerel.jpg   Henri Becquerel (domaine public)
-curie.jpg       Marie et Pierre Curie au laboratoire (domaine public)
+curie.jpg       Marie Curie (domaine public) — déjà en place
+becquerel.jpg   déjà en place
 nagasaki.jpg    Champignon atomique de Nagasaki, 9 août 1945 (domaine public)
 gravelines.jpg  Centrale nucléaire de Gravelines (indiquer auteur + licence)
 fukushima.jpg   Fukushima Daiichi après l'accident (indiquer auteur + licence)

@@ -36,7 +36,7 @@
     list.forEach((t,i)=>{
       const b=document.createElement('button');b.className='tick';b.tabIndex=-1;
       b.style.left=(list.length===1?50:(i/(list.length-1))*100)+'%';
-      b.innerHTML=`<i></i>${t[0]} <span>· ${t[1]}</span>`;
+      b.innerHTML=`<i></i>${t[0]} <span>· ${t[1]}</span>`;if(i===0)b.classList.add('first');if(i===list.length-1)b.classList.add('last');
       b.onclick=()=>{const s=screens.find(x=>x.dataset.era===e&&+x.dataset.tick===i);if(s)go(screens.indexOf(s));};
       ticks.appendChild(b);
     });
